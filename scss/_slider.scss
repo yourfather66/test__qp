@@ -1,9 +1,37 @@
 .slider__cont {
   padding: 0px 20px;
+  display: grid;
+  justify-items: center;
+  grid-template-columns: auto auto auto;
+  grid-template-areas:
+    " title title title"
+    "slide slide slide"
+    "btn_l num btn_r";
+  @media (min-width: 768px) {
+    grid-template-columns: 10% max-content 10%;
+    justify-content: center;
+    grid-template-areas:
+      " title title title"
+      "btn_l slide btn_r"
+      "num num num";
+  }
+  @media (min-width: 1440px) {
+    grid-template-columns: 4% max-content max-content max-content;
+    grid-template-areas:
+      " title title slide slide"
+      "btn_l btn_r slide slide"
+      "num num num num";
+  }
 }
 
 .slider__title {
-  @include title(5.6rem, 1.2);
+  @include title(5rem, 1.2);
+
+  grid-area: title;
+  @media (min-width: 768px) {
+    justify-self: start;
+    max-width: 460px;
+  }
   & span {
     background-color: #f0edff;
   }
@@ -13,20 +41,70 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 32px 0 0 0;
-  &__name {
-    @include title(1.8rem, 1.66);
-    margin-top: 8px;
+  margin: 32px 0 24px 0;
+  grid-area: slide;
+
+  @media (min-width: 768px) {
+    margin: 48px 0 32px 0;
   }
-  &__position {
-    @include text(1.6rem, 1.68, #717171);
+  @media (min-width: 1440px) {
+    margin: 0 0 32px 0;
+    align-items: flex-start;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-areas:
+      ". person"
+      "quote text";
   }
+
   &__text {
     @include title(2.4rem, 1);
+    text-align: center;
+    @media (min-width: 768px) {
+      max-width: 585px;
+    }
+    @media (min-width: 1440px) {
+      text-align: left;
+      grid-area: text;
+      margin-top: 20px;
+    }
   }
   &__quotes {
     margin: 24px 0;
+    @media (min-width: 1440px) {
+      grid-area: quote;
+      margin: 20px 15px 0 0;
+    }
   }
+}
+
+.person__cont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @media (min-width: 1440px) {
+    flex-direction: row;
+    align-items: center;
+    grid-area: person;
+  }
+}
+
+.slide__name__cont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @media (min-width: 1440px) {
+    align-items: flex-start;
+    margin-left: 30px;
+  }
+}
+.slide__name {
+  @include title(1.8rem, 1.66);
+  margin-top: 8px;
+}
+
+.slide__position {
+  @include text(1.6rem, 1.68, #717171);
 }
 
 .slide__num {
@@ -34,6 +112,11 @@
   font-family: "Museo Sans Cyrl";
   font-size: 1.5rem;
   font-weight: 500;
+  grid-area: num;
+  align-self: center;
+  @media (min-width: 1440px) {
+    margin-left: 26px;
+  }
 }
 
 .slider__btn {
@@ -49,5 +132,30 @@
   cursor: pointer;
   &:hover {
     border-color: #6248ff;
+  }
+}
+
+.slider__btn__left {
+  grid-area: btn_l;
+  justify-self: start;
+  @media (min-width: 768px) {
+    align-self: end;
+    margin-bottom: 110px;
+  }
+  @media (min-width: 1440px) {
+    margin: 0;
+  }
+}
+
+.slider__btn__right {
+  grid-area: btn_r;
+  justify-self: end;
+  @media (min-width: 768px) {
+    align-self: end;
+    margin-bottom: 110px;
+  }
+  @media (min-width: 1440px) {
+    justify-self: start;
+    margin: 0;
   }
 }
