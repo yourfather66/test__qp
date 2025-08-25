@@ -1,0 +1,40 @@
+@mixin btn($padding: 13px 24px, $font-size: 1.4rem) {
+  border-radius: 60px;
+  background-color: #6248ff;
+  padding: $padding;
+  color: #fff;
+  font-family: "Museo Sans Cyrl";
+  font-size: $font-size;
+  font-weight: 500;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s linear;
+  &:hover:not(:disabled) {
+    background-color: #7181fc;
+  }
+
+  &:active:not(:disabled) {
+    background-color: #354bf4;
+  }
+  &:disabled {
+    background-color: #e0e0e0;
+    cursor: not-allowed;
+  }
+}
+
+@mixin title($fsize: 4rem, $linehei: 1.1) {
+  color: #333;
+  font-family: "Museo Sans Cyrl";
+  font-size: $fsize;
+  font-weight: 500;
+  line-height: $linehei;
+}
+
+@mixin text($fsize: 1.8rem, $linehei: 1.66, $color: #4f4f4f) {
+  color: $color;
+  font-family: "Montserrat";
+  font-size: $fsize;
+  font-weight: 400;
+  line-height: $linehei;
+}

@@ -1,0 +1,115 @@
+footer {
+  padding: 46px 0 32px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 32px;
+
+  @media (min-width: 768px) {
+    padding: 62px 0 48px;
+    gap: 40px;
+  }
+  @media (min-width: 1440px) {
+    padding: 32px 120px 72px;
+  }
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 0px 20px;
+  width: 100%;
+  @media (min-width: 768px) {
+    align-items: center;
+    padding: 0;
+  }
+  @media (min-width: 1440px) {
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0;
+  }
+  &__logo {
+    align-self: center;
+    @media (min-width: 1440px) {
+      margin: 0 160px 0 0;
+      align-self: flex-start;
+    }
+  }
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    margin: 46px 0 32px;
+    gap: 32px;
+    @media (min-width: 768px) {
+      flex-direction: row;
+      justify-content: space-between;
+      margin: 54px 0 40px;
+      gap: 47px;
+    }
+    @media (min-width: 1440px) {
+      flex-direction: column;
+      order: 11;
+      margin: 0 0 0 96px;
+      gap: 24px;
+    }
+  }
+  &__card + &__card {
+    margin-top: 24px;
+    @media (min-width: 768px) {
+      margin-top: 32px;
+    }
+    @media (min-width: 1440px) {
+      margin: 0 0 0 30px;
+    }
+  }
+  &__card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    @media (min-width: 768px) {
+      align-items: center;
+      max-width: 508px;
+    }
+    @media (min-width: 1440px) {
+      max-width: 380px;
+    }
+    &__title {
+      @include title(1.8rem, 1);
+    }
+    &__text {
+      @include text(1.6rem, 1.68);
+    }
+  }
+  &__copy {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+    max-width: 1440px;
+    @media (min-width: 1440px) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    &__text {
+      @include text(1.6rem, 1.68, #828282);
+    }
+    &__link {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      @media (min-width: 1440px) {
+        flex-direction: row;
+        gap: 66px;
+      }
+      & a {
+        @include text(1.6rem, 1.68, #828282);
+        text-decoration: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,53 @@
+.slider__cont {
+  padding: 0px 20px;
+}
+
+.slider__title {
+  @include title(5.6rem, 1.2);
+  & span {
+    background-color: #f0edff;
+  }
+}
+
+.slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 32px 0 0 0;
+  &__name {
+    @include title(1.8rem, 1.66);
+    margin-top: 8px;
+  }
+  &__position {
+    @include text(1.6rem, 1.68, #717171);
+  }
+  &__text {
+    @include title(2.4rem, 1);
+  }
+  &__quotes {
+    margin: 24px 0;
+  }
+}
+
+.slide__num {
+  color: #6248ff;
+  font-family: "Museo Sans Cyrl";
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.slider__btn {
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s linear;
+  cursor: pointer;
+  &:hover {
+    border-color: #6248ff;
+  }
+}

@@ -1,0 +1,156 @@
+.steps {
+  padding: 80px 20px;
+  margin: 0 auto;
+  @media (min-width: 768px) {
+    max-width: 698px;
+    padding: 120px 0px;
+  }
+  @media (min-width: 1440px) {
+    max-width: 1100px;
+    padding: 120px 0px;
+    padding: 140px 0px;
+  }
+  &__title {
+    @include title();
+    display: block;
+    margin: 0 auto;
+    max-width: 538px;
+    @media (min-width: 768px) {
+      @include title(5.6rem, 1.25);
+      max-width: 439px;
+      margin: 0;
+    }
+    span {
+      background-color: #eef0ff;
+    }
+  }
+  &__card__cont {
+    margin-top: 32px;
+    @media (min-width: 768px) {
+      position: relative;
+      display: grid;
+      column-gap: 30px;
+      margin-top: 48px;
+      grid-template-areas:
+        "card1 ."
+        "card1 ."
+        "card1 ."
+        "card1 card2"
+        ". card2"
+        ". card2"
+        "card3 card2"
+        "card3 ."
+        "card3 ."
+        "card3 card4"
+        ". card4"
+        ". card4"
+        ". card4";
+      @media (min-width: 1440px) {
+        row-gap: 10px;
+      }
+    }
+    @media (min-width: 1440px) {
+      column-gap: 132px;
+      margin-top: 60px;
+    }
+  }
+}
+
+.steps__conect__line {
+  display: none;
+  @media (min-width: 768px) {
+    display: inline;
+    position: absolute;
+  }
+  &:nth-of-type(1) {
+    top: 118px;
+    right: 168px;
+    @media (min-width: 1440px) {
+      top: 90px;
+      right: 240px;
+    }
+  }
+  &:nth-of-type(2) {
+    top: 315px;
+    left: 166px;
+    @media (min-width: 1440px) {
+      top: 273px;
+      left: 240px;
+    }
+  }
+  &:nth-of-type(3) {
+    top: 514px;
+    right: 168px;
+    @media (min-width: 1440px) {
+      top: 457px;
+      right: 240px;
+    }
+  }
+}
+
+.steps__card {
+  padding: 24px;
+  border-radius: 30px;
+  border: 2px solid #4f62f6;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  z-index: 1;
+  position: relative;
+  @media (min-width: 768px) {
+    padding: 32px;
+    max-width: 331px;
+    width: auto;
+    margin: 0;
+  }
+  @media (min-width: 1440px) {
+    max-width: 483px;
+  }
+  &:not(:last-of-type) {
+    margin-bottom: 24px;
+    @media (min-width: 768px) {
+      margin-bottom: 0;
+    }
+  }
+  &:nth-of-type(1) {
+    @media (min-width: 768px) {
+      grid-area: card1;
+      justify-self: end;
+    }
+  }
+  &:nth-of-type(2) {
+    @media (min-width: 768px) {
+      grid-area: card2;
+      justify-self: start;
+    }
+  }
+  &:nth-of-type(3) {
+    @media (min-width: 768px) {
+      grid-area: card3;
+      justify-self: end;
+    }
+  }
+  &:nth-of-type(4) {
+    @media (min-width: 768px) {
+      grid-area: card4;
+      justify-self: start;
+    }
+  }
+
+  &__num {
+    color: #4f62f6;
+    font-family: "Museo Sans Cyrl";
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+  &__title {
+    color: #333;
+    font-family: "Museo Sans Cyrl";
+    font-size: 2.4rem;
+    font-weight: 500;
+    margin: 8px 0 24px;
+  }
+  &__text {
+    @include text();
+  }
+}
